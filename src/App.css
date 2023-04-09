@@ -241,6 +241,14 @@ img{
     margin: 0 2px;
   
   }
-
+  .pageNumbers button {
+    background-color: #002451;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    font-size: 10px;
+    padding: 8px;
+  }
 
 }
