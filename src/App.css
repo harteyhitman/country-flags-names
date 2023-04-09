@@ -66,7 +66,10 @@ img{
 }
 .pageNumbers {
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: flex-start;
   justify-content: center;
+  align-items: center;
   list-style: none;
   margin: 10px;
   padding: 0;
@@ -127,7 +130,7 @@ img{
 
 
 
-@media only screen and (max-width: 320px) {
+@media  screen and (max-width: 320px) {
   .container{
     margin: 0 0px;
   }
@@ -158,7 +161,7 @@ img{
     justify-content: center;
     align-items: center;
     list-style: none;
-    margin: 10px;
+    margin: 5px;
     position: relative;
     left: 7px;
     padding: 0;
@@ -173,6 +176,8 @@ img{
     list-style: none;
     margin: 10px;
     padding: 0;
+    flex-wrap: wrap;
+    flex-direction: flex-start;
   }
 
   .pageNumbers button {
@@ -198,7 +203,7 @@ img{
 }
 
 
-@media only screen and (max-width: 600px) {
+@media  screen and (max-width: 600px) {
   .container{
     margin: 0 0px;
   }
@@ -226,6 +231,8 @@ img{
   }
   .pageNumbers {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: flex-start;
     justify-content: center;
     align-items: center;
     list-style: none;
@@ -250,5 +257,4 @@ img{
     font-size: 10px;
     padding: 8px;
   }
-
 }

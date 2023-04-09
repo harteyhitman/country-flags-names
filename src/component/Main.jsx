@@ -15,8 +15,8 @@ function Main() {
   const indexOfFirstCountry = indexOfLastCountry - countriesPerPage;
   const currentCountries = name.slice(indexOfFirstCountry, indexOfLastCountry);
 
-  const pageNumbers = [1,2,3,4,5,6,7,8,9,10];
-  for (let i = 1; i <= Math.ceil(name / countriesPerPage); i++) {
+  const pageNumbers = [];
+  for (let i = 1; i <= Math.ceil(name.length / countriesPerPage); i++) {
     pageNumbers.push(i);
   }
 
