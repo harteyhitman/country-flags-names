@@ -1,25 +1,19 @@
 import { React, useEffect, useState } from "react";
 
-
-
 function Main() {
   const [name, setNames] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [countriesPerPage] = useState(10);
-  
-
- 
 
   const indexOfLastCountry = currentPage * countriesPerPage;
   const indexOfFirstCountry = indexOfLastCountry - countriesPerPage;
   const currentCountries = name.slice(indexOfFirstCountry, indexOfLastCountry);
 
-  const pageNumbers = [];
+  const pageNumbers = []; 
   for (let i = 1; i <= Math.ceil(name.length / countriesPerPage); i++) {
     pageNumbers.push(i);
   }
-
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
@@ -30,7 +24,7 @@ function Main() {
 
   const renderPageNumbers = pageNumbers.map((number) => {
     return (
-      <li key={number} className={currentPage === number ? 'active' : null}>
+      <li key={number} className={currentPage === number ? "active" : null}>
         <button onClick={() => setCurrentPage(number)}>{number}</button>
       </li>
     );
@@ -48,34 +42,33 @@ function Main() {
   }, []);
   console.log(name);
 
-
   return (
     <div className="Main">
       <input
-
         className="search-input"
         type="text"
-        placeholder='search....'
+        placeholder="search...."
         value={searchTerm}
         onChange={handleSearch}
       />
 
-      <ul className="pageNumbers">
-      {renderPageNumbers}
-    </ul>
+      <ul className="pageNumbers">{renderPageNumbers}</ul>
 
+      
+      <div className="grid-style">
       {filteredCountries.map((x, i) => (
         <div key={i} className="container">
+          <div className="flag-container">
           <ul className="country-names">
             <li>{x.name.common}</li>
             <li>{x.name.official}</li>
           </ul>
-          <div className="flag-container">
             <img className="flags" src={x.flags.png} alt={x.flags.png} />
             <p className="flags-text">{x.flags.alt}</p>
           </div>
         </div>
       ))}
+      </div>
     </div>
   );
 }
